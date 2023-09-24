@@ -1,7 +1,7 @@
 {
   "name": "opencv4",
   "version": "4.8.0",
-  "port-version": 7,
+  "port-version": 8,
   "description": "computer vision library",
   "homepage": "https://github.com/opencv/opencv",
   "license": "Apache-2.0",
@@ -24,6 +24,15 @@
     "default-features"
   ],
   "features": {
+    "imgproc": {
+      "description": "Image Processing module"
+    },
+    "imgcodecs": {
+      "description": "Image I/O",
+      "dependencies": [
+        "imgproc"
+      ]
+    },
     "highgui": {
       "description": "HighGUI module",
       "dependencies": [
