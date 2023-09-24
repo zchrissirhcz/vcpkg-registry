@@ -80,8 +80,6 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
  "webp"      WITH_WEBP
  "world"     BUILD_opencv_world
  "dc1394"    WITH_1394
- "imgproc"   MY_BUILD_MODULE_IMGPROC
- "imgcodecs" MY_BUILD_MODULE_IMGCODECS
  "highgui"   MY_BUILD_MODULE_HIGHGUI
  "calib3d"   MY_BUILD_MODULE_CALIB3D
  "photo"     MY_BUILD_MODULE_PHOTO
@@ -371,13 +369,7 @@ if("contrib" IN_LIST FEATURES)
   endif()
 endif()
 
-set(my_build_module_list "core")
-if(MY_BUILD_MODULE_IMGPROC)
-  set(my_build_module_list "${my_build_module_list},imgproc")
-endif()
-if(MY_BUILD_MODULE_IMGCODECS)
-  set(my_build_module_list "${my_build_module_list},imgcodecs")
-endif()
+set(my_build_module_list "core,imgproc,imgcodecs")
 if(MY_BUILD_MODULE_HIGHGUI)
   set(my_build_module_list "${my_build_module_list},highgui")
 endif()
