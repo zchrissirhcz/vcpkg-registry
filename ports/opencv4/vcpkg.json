@@ -24,6 +24,12 @@
     "default-features"
   ],
   "features": {
+    "highgui": {
+      "description": "HighGUI",
+      "dependencies": [
+        "imgproc"
+      ]
+    },
     "calib3d": {
       "description": "calibration",
       "dependencies": [
