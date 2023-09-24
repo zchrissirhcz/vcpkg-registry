@@ -374,10 +374,10 @@ endif()
 set(my_build_module_list "core")
 if(MY_BUILD_MODULE_IMGPROC)
   set(my_build_module_list "${my_build_module_list},imgproc")
-endif
+endif()
 if(MY_BUILD_MODULE_IMGCODECS)
   set(my_build_module_list "${my_build_module_list},imgcodecs")
-endif
+endif()
 if(MY_BUILD_MODULE_HIGHGUI)
   set(my_build_module_list "${my_build_module_list},highgui")
 endif()
