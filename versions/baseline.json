@@ -1,5 +1,6 @@
 {
   "default": {
-    "beicode": { "baseline": "1.0.0", "port-version": 0 }
+    "beicode": { "baseline": "1.0.0", "port-version": 0 },
+    "opencv4": { "baseline": "4.8.0", "port-version": 7 }
   }
 }
