@@ -24,6 +24,18 @@
     "default-features"
   ],
   "features": {
+    "calib3d": {
+      "description": "calibration",
+      "dependencies": [
+        "imgproc"
+      ]
+    },
+    "photo": {
+      "description": "computational photography",
+      "dependencies": [
+        "imgproc"
+      ]
+    },
     "ade": {
       "description": "graph api",
       "dependencies": [

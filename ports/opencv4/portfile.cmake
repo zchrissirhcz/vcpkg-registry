@@ -80,6 +80,8 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
  "webp"      WITH_WEBP
  "world"     BUILD_opencv_world
  "dc1394"    WITH_1394
+ "calib3d"   MY_BUILD_CALIB3D
+ "photo"     MY_BUILD_PHOTO
 )
 
 # Cannot use vcpkg_check_features() for "dnn", "gtk", ipp", "openmp", "ovis", "python", "qt", "tbb"
@@ -366,6 +368,14 @@ if("contrib" IN_LIST FEATURES)
   endif()
 endif()
 
+set(my_build_list "core,imgproc,imgcodecs")
+if(MY_BUILD_CALIB3D)
+  set(my_build_list "${default_build_list},calib3d")
+endif()
+if(MY_BUILD_PHOTO)
+  set(my_build_list "${default_build_list},photo")
+endif()
+
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
@@ -461,7 +471,8 @@ vcpkg_cmake_configure(
         ${ADDITIONAL_BUILD_FLAGS}
         -DBUILD_IPP_IW=${WITH_IPP}
         -DOPENCV_LAPACK_FIND_PACKAGE_ONLY=ON
-        -DBUILD_LIST=core
+        ##### Only build minimal modules
+        -DBUILD_LIST="${my_build_list}"
 )
 
 vcpkg_cmake_install()
