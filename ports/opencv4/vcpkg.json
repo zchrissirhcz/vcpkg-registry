@@ -25,19 +25,19 @@
   ],
   "features": {
     "highgui": {
-      "description": "HighGUI",
+      "description": "HighGUI module",
       "dependencies": [
         "imgproc"
       ]
     },
     "calib3d": {
-      "description": "calibration",
+      "description": "calibration module",
       "dependencies": [
         "imgproc"
       ]
     },
     "photo": {
-      "description": "computational photography",
+      "description": "computational photography module",
       "dependencies": [
         "imgproc"
       ]
